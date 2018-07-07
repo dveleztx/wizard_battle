@@ -2,7 +2,7 @@
 import random
 import time
 
-from actors import Wizard, Creature
+from actors import Wizard, Creature, SmallAnimal, Dragon
 
 
 def main():
@@ -21,11 +21,11 @@ def game_loop():
 
     # Create Creature Objects
     creatures = [
-        Creature("Toad", 1),
+        SmallAnimal("Toad", 1),
         Creature("Tiger", 12),
-        Creature("Bat", 3),
-        Creature("Dragon", 50),
-        Creature("Evil Wizard", 1000),
+        SmallAnimal("Bat", 3),
+        Dragon("Dragon", 50, 75, True),
+        Wizard("Evil Wizard", 1000),
     ]
 
     # Create Hero Object
@@ -50,12 +50,15 @@ def game_loop():
         elif cmd == 'r':
             print("The wizard has become unsure of his power and flees!!!")
         elif cmd == 'l':
-            print("THe wizard {} takes in the surroundings and sees: ".format(hero.name))
+            print("The wizard {} takes in the surroundings and sees: ".format(hero.name))
             for c in creatures:
                 print(" * A {} of level {}".format(c.name, c.level))
         else:
             print("OK, exiting game... bye!")
             break
+
+        if not creatures:
+            print("You've defeated all the creatures, well done!")
 
         print()
 
