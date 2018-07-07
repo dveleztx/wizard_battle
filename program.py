@@ -1,3 +1,5 @@
+# import actors
+from actors import Wizard, Creature
 
 
 def main():
@@ -13,6 +15,18 @@ def print_header():
 
 
 def game_loop():
+
+    creatures = [
+        Creature('Toad', 1),
+        Creature('Tiger', 12),
+        Creature('Bat', 3),
+        Creature('Dragon', 50),
+        Creature('Evil Wizard', 1000),
+    ]
+
+    print(creatures)
+
+    hero = Wizard('Certneilius', 75)
 
     while True:
 
