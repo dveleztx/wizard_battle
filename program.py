@@ -1,15 +1,22 @@
-# import actors
+# Program    : Wizard Battle
+# Author     : David Velez
+# Date       : 07/08/2018
+# Description: Wizard Battle App from Python Training Vids from Michael Kennedy
+
+
+# Imports
 import random
 import time
-
 from actors import Wizard, Creature, SmallAnimal, Dragon
 
 
+# Main Function
 def main():
     print_header()
     game_loop()
 
 
+# Print the Header
 def print_header():
     print("------------------------")
     print("    WIZARD GAME APP")
@@ -17,6 +24,7 @@ def print_header():
     print()
 
 
+# Game Logic
 def game_loop():
 
     # Create Creature Objects
@@ -31,7 +39,7 @@ def game_loop():
     # Create Hero Object
     hero = Wizard("Certneilius", 75)
 
-    # Game Logic
+    # Play the Game
     while True:
 
         active_creature = random.choice(creatures)
@@ -63,5 +71,6 @@ def game_loop():
         print()
 
 
+# Main
 if __name__ == '__main__':
     main()

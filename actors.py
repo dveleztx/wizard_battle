@@ -1,7 +1,10 @@
+# Imports
 import random
 
 
+# Creature Class
 class Creature:
+    # Constructor
     def __init__(self, name, level):
         self.name = name
         self.level = level
@@ -12,6 +15,7 @@ class Creature:
             self.level
         )
 
+    # Defensive Roll Method
     def get_defensive_roll(self):
         return random.randint(1, 12) * self.level
 
@@ -21,6 +25,7 @@ class Wizard(Creature):
     def __init__(self, name, level):
         super().__init__(name, level)
 
+    # Attack Method
     def attack(self, creature):
         print("The wizard {} attacks {}!".format(
             self.name, creature.name
@@ -33,6 +38,7 @@ class Wizard(Creature):
         print("You roll {}...".format(my_roll))
         print("{} rolls {}...".format(creature.name, creature_roll))
 
+        # Determine victor of the battle
         if my_roll >= creature_roll:
             print("The wizard has handily defeated {}.".format(creature.name))
             return True
@@ -55,6 +61,7 @@ class Dragon(Creature):
         self.breathes_fire = breathes_fire
         self.scaliness = scaliness
 
+    # Override of defensive roll method
     def get_defensive_roll(self):
         base_roll = super().get_defensive_roll()
 
